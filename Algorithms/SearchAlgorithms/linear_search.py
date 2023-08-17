@@ -1,18 +1,17 @@
-import random
-
-def linear_search(numbers, target):
-  result = 0
-  for i in range(len(numbers)):
-    if numbers[i] == target:
-      result = target  
-  return target
+def linear_search(numbers, size, target):
+    for i in range(size):
+        if numbers[i] == target:
+            return target
+    return -1
 
 
 if __name__ == "__main__":
-  numbers = [random.randint(0, 1000) for _ in range(1000)]
-  target = int(input())
+    numbers = [23, 13, 4, 35, 17, 93, 52]
+    size = len(numbers)
+    target = 17
+    result = linear_search(numbers, size, target)
 
-  if linear_search(numbers, target) == target:
-    print(target)
-  else:
-    print("The result is not found with the searched item.")
+    if result == -1:
+        print("Element is not found.")
+    else:
+        print("Element found at index: ", result)
